@@ -12,8 +12,9 @@ struct cpu {
 
 extern struct cpu cpus[NCPU];
 extern int ncpu;
-
-//PAGEBREAK: 17
+extern struct cpu *cpu asm("%gs:0");
+extern struct proc *proc asm("%gs:4");
+//GEBREAK: 17
 // Saved registers for kernel context switches.
 // Don't need to save all the segment registers (%cs, etc),
 // because they are constant across kernel contexts.
@@ -49,6 +50,8 @@ struct proc {
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
+	int passo;
+int passada;
 };
 
 // Process memory is laid out contiguously, low addresses first:

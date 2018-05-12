@@ -11,4 +11,8 @@
 #define LOGSIZE      (MAXOPBLOCKS*3)  // max data blocks in on-disk log
 #define NBUF         (MAXOPBLOCKS*3)  // size of disk block cache
 #define FSSIZE       1000  // size of file system in blocks
-
+#define MAX_STRIDE 4000000
+#define N_TICKETS  30
+#define MIN_TICKETS  25
+#define MAX_TICKETS 100
+#define STRIDE(X) (MAX_TICKETS/(X))
